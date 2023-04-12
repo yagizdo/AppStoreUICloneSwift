@@ -11,7 +11,10 @@
 		10F0C60229E7740800D62250 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C60129E7740800D62250 /* SceneDelegate.swift */; };
 		10F0C60929E7740800D62250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F0C60829E7740800D62250 /* Assets.xcassets */; };
 		10F0C60C29E7740800D62250 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F0C60A29E7740800D62250 /* LaunchScreen.storyboard */; };
-		10F0C61529E774DE00D62250 /* MainTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C61429E774DE00D62250 /* MainTabbarVC.swift */; };
+		10F0C61529E774DE00D62250 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C61429E774DE00D62250 /* MainTabbarController.swift */; };
+		10F0C61929E776B100D62250 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C61829E776B100D62250 /* TodayViewController.swift */; };
+		10F0C61B29E776FD00D62250 /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C61A29E776FD00D62250 /* AppsViewController.swift */; };
+		10F0C61D29E7770800D62250 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C61C29E7770800D62250 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +24,10 @@
 		10F0C60829E7740800D62250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10F0C60B29E7740800D62250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10F0C60D29E7740800D62250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		10F0C61429E774DE00D62250 /* MainTabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarVC.swift; sourceTree = "<group>"; };
+		10F0C61429E774DE00D62250 /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
+		10F0C61829E776B100D62250 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		10F0C61A29E776FD00D62250 /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
+		10F0C61C29E7770800D62250 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		10F0C5FE29E7740800D62250 /* AppStoreUIClone */ = {
 			isa = PBXGroup;
 			children = (
+				10F0C61729E7765B00D62250 /* controllers */,
 				10F0C61629E7756400D62250 /* files */,
 				10F0C61329E774A500D62250 /* views */,
 			);
@@ -63,7 +70,9 @@
 		10F0C61329E774A500D62250 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				10F0C61429E774DE00D62250 /* MainTabbarVC.swift */,
+				10F0C61829E776B100D62250 /* TodayViewController.swift */,
+				10F0C61A29E776FD00D62250 /* AppsViewController.swift */,
+				10F0C61C29E7770800D62250 /* SearchViewController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -78,6 +87,14 @@
 				10F0C60129E7740800D62250 /* SceneDelegate.swift */,
 			);
 			name = files;
+			sourceTree = "<group>";
+		};
+		10F0C61729E7765B00D62250 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				10F0C61429E774DE00D62250 /* MainTabbarController.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +167,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10F0C61529E774DE00D62250 /* MainTabbarVC.swift in Sources */,
+				10F0C61D29E7770800D62250 /* SearchViewController.swift in Sources */,
+				10F0C61929E776B100D62250 /* TodayViewController.swift in Sources */,
+				10F0C61B29E776FD00D62250 /* AppsViewController.swift in Sources */,
+				10F0C61529E774DE00D62250 /* MainTabbarController.swift in Sources */,
 				10F0C60029E7740800D62250 /* AppDelegate.swift in Sources */,
 				10F0C60229E7740800D62250 /* SceneDelegate.swift in Sources */,
 			);
