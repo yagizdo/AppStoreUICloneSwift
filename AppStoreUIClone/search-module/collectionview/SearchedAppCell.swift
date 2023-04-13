@@ -22,6 +22,35 @@ class SearchedAppCell: UICollectionViewCell {
         ])
         return imageView
     }()
+    
+    // Screenshot Views
+    private var screenshotView1: UIImageView = {
+        let imageView = UIImageView()
+        imageView.customMode()
+        // width : 66, height : 66
+        // width : width * 0.176, height : height * 0,0812
+        imageView.backgroundColor = .red
+        imageView.layer.cornerRadius = 6
+        return imageView
+    }()
+    private var screenshotView2: UIImageView = {
+        let imageView = UIImageView()
+        imageView.customMode()
+        // width : 66, height : 66
+        // width : width * 0.176, height : height * 0,0812
+        imageView.backgroundColor = .red
+        imageView.layer.cornerRadius = 6
+        return imageView
+    }()
+    private var screenshotView3: UIImageView = {
+        let imageView = UIImageView()
+        imageView.customMode()
+        // width : 66, height : 66
+        // width : width * 0.176, height : height * 0,0812
+        imageView.backgroundColor = .red
+        imageView.layer.cornerRadius = 6
+        return imageView
+    }()
     private var appName: UILabel = {
         let label = UILabel()
         label.text = "Twitter"
@@ -46,13 +75,16 @@ class SearchedAppCell: UICollectionViewCell {
         button.titleLabel?.font = .boldSystemFont(ofSize: 16)
         NSLayoutConstraint.activate([
             button.widthAnchor.constraint(equalToConstant: 75),
-            button.heightAnchor.constraint(equalToConstant: 25)
         ])
         return button
     }()
+    
+    // Stackviews
     private var headerStackView: UIStackView!
     private var labelStackView: UIStackView!
-  
+    private var screenshotsStackView: UIStackView!
+    private var searchedAppStackView: UIStackView!
+    
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -72,7 +104,6 @@ extension SearchedAppCell {
             appName,appCategory,appDownloadCount
         ])
         labelStackView.axis = .vertical
-        labelStackView.spacing = 12
         labelStackView.distribution = .fillEqually
         
         headerStackView = UIStackView(arrangedSubviews: [
@@ -82,14 +113,29 @@ extension SearchedAppCell {
         headerStackView.axis = .horizontal
         headerStackView.spacing = 12
         headerStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        screenshotsStackView = UIStackView(arrangedSubviews: [
+            screenshotView1,screenshotView2,screenshotView3
+        ])
+        screenshotsStackView.axis = .horizontal
+        screenshotsStackView.spacing = 8
+        screenshotsStackView.distribution = .fillEqually
+        
+        searchedAppStackView = UIStackView(arrangedSubviews: [
+            headerStackView, screenshotsStackView
+        ])
+        
+        searchedAppStackView.translatesAutoresizingMaskIntoConstraints = false
+        searchedAppStackView.axis = .vertical
+        searchedAppStackView.spacing = 12
     }
     private func layout() {
-        addSubview(headerStackView)
+        addSubview(searchedAppStackView)
         NSLayoutConstraint.activate([
-            headerStackView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            headerStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            headerStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            headerStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            searchedAppStackView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            searchedAppStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            searchedAppStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            searchedAppStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 }

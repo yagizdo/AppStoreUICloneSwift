@@ -49,7 +49,7 @@ extension SearchViewController {
 extension SearchViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // 250 = view.frame.height * 0.3
-        return .init(width: view.frame.width, height: view.frame.height * 0.3)
+        return .init(width: view.frame.width, height: view.frame.height * 0.35)
     }
 }
 
