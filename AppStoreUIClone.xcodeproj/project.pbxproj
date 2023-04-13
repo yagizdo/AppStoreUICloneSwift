@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		105E628629E82FF3004F4794 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E628529E82FF3004F4794 /* SearchRouter.swift */; };
+		105E628929E83017004F4794 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E628829E83017004F4794 /* SearchPresenter.swift */; };
+		105E628B29E83028004F4794 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E628A29E83028004F4794 /* SearchInteractor.swift */; };
+		105E629129E83051004F4794 /* SearchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E629029E83051004F4794 /* SearchProtocols.swift */; };
+		105E629329E8307A004F4794 /* SearchedAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E629229E8307A004F4794 /* SearchedAppCell.swift */; };
+		105E629729E832A8004F4794 /* .swiftlint.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 105E629629E832A8004F4794 /* .swiftlint.yaml */; };
 		10F0C60029E7740800D62250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C5FF29E7740800D62250 /* AppDelegate.swift */; };
 		10F0C60229E7740800D62250 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C60129E7740800D62250 /* SceneDelegate.swift */; };
 		10F0C60929E7740800D62250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F0C60829E7740800D62250 /* Assets.xcassets */; };
@@ -18,6 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		105E628529E82FF3004F4794 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		105E628829E83017004F4794 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		105E628A29E83028004F4794 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		105E629029E83051004F4794 /* SearchProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProtocols.swift; sourceTree = "<group>"; };
+		105E629229E8307A004F4794 /* SearchedAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedAppCell.swift; sourceTree = "<group>"; };
+		105E629629E832A8004F4794 /* .swiftlint.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yaml; sourceTree = "<group>"; };
 		10F0C5FC29E7740800D62250 /* AppStoreUIClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreUIClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F0C5FF29E7740800D62250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F0C60129E7740800D62250 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +53,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		105E628129E82F8C004F4794 /* search-module */ = {
+			isa = PBXGroup;
+			children = (
+				105E628F29E83044004F4794 /* protocols */,
+				105E628C29E8302E004F4794 /* interactor */,
+				105E628729E83005004F4794 /* presenter */,
+				105E628429E82FDF004F4794 /* router */,
+				105E628329E82FD6004F4794 /* collectionview */,
+				105E628229E82F98004F4794 /* view */,
+			);
+			path = "search-module";
+			sourceTree = "<group>";
+		};
+		105E628229E82F98004F4794 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				10F0C61C29E7770800D62250 /* SearchViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		105E628329E82FD6004F4794 /* collectionview */ = {
+			isa = PBXGroup;
+			children = (
+				105E629229E8307A004F4794 /* SearchedAppCell.swift */,
+			);
+			path = collectionview;
+			sourceTree = "<group>";
+		};
+		105E628429E82FDF004F4794 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				105E628529E82FF3004F4794 /* SearchRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		105E628729E83005004F4794 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				105E628829E83017004F4794 /* SearchPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		105E628C29E8302E004F4794 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				105E628A29E83028004F4794 /* SearchInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		105E628F29E83044004F4794 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				105E629029E83051004F4794 /* SearchProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
 		10F0C5F329E7740800D62250 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +133,7 @@
 		10F0C5FE29E7740800D62250 /* AppStoreUIClone */ = {
 			isa = PBXGroup;
 			children = (
+				105E628129E82F8C004F4794 /* search-module */,
 				10F0C61729E7765B00D62250 /* controllers */,
 				10F0C61629E7756400D62250 /* files */,
 				10F0C61329E774A500D62250 /* views */,
@@ -72,7 +146,6 @@
 			children = (
 				10F0C61829E776B100D62250 /* TodayViewController.swift */,
 				10F0C61A29E776FD00D62250 /* AppsViewController.swift */,
-				10F0C61C29E7770800D62250 /* SearchViewController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -85,6 +158,7 @@
 				10F0C5FF29E7740800D62250 /* AppDelegate.swift */,
 				10F0C60D29E7740800D62250 /* Info.plist */,
 				10F0C60129E7740800D62250 /* SceneDelegate.swift */,
+				105E629629E832A8004F4794 /* .swiftlint.yaml */,
 			);
 			name = files;
 			sourceTree = "<group>";
@@ -107,6 +181,7 @@
 				10F0C5F829E7740800D62250 /* Sources */,
 				10F0C5F929E7740800D62250 /* Frameworks */,
 				10F0C5FA29E7740800D62250 /* Resources */,
+				105E628029E8297C004F4794 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -155,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				105E629729E832A8004F4794 /* .swiftlint.yaml in Resources */,
 				10F0C60C29E7740800D62250 /* LaunchScreen.storyboard in Resources */,
 				10F0C60929E7740800D62250 /* Assets.xcassets in Resources */,
 			);
@@ -162,16 +238,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		105E628029E8297C004F4794 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		10F0C5F829E7740800D62250 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				10F0C61D29E7770800D62250 /* SearchViewController.swift in Sources */,
+				105E629129E83051004F4794 /* SearchProtocols.swift in Sources */,
 				10F0C61929E776B100D62250 /* TodayViewController.swift in Sources */,
 				10F0C61B29E776FD00D62250 /* AppsViewController.swift in Sources */,
+				105E629329E8307A004F4794 /* SearchedAppCell.swift in Sources */,
+				105E628B29E83028004F4794 /* SearchInteractor.swift in Sources */,
+				105E628629E82FF3004F4794 /* SearchRouter.swift in Sources */,
 				10F0C61529E774DE00D62250 /* MainTabbarController.swift in Sources */,
 				10F0C60029E7740800D62250 /* AppDelegate.swift in Sources */,
+				105E628929E83017004F4794 /* SearchPresenter.swift in Sources */,
 				10F0C60229E7740800D62250 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,12 @@
+line_length:
+  warning: 120
+  ignores_function_declarations: true
+  ignores_comments: true
+  ignores_interpolated_strings: true
+  ignores_urls: true
+# Colons should be next to the identifier when specifying a type and next to the key in dictionary literals.
+colon:
+  # "spaced" (default) requires a space after but not before the colon, unless colon is at the beginning of a line, or after an optional binding operator
+  # "nospace" requires no whitespace around the colon
+  # "none" lets any spacing be used
+  mode: spaced
