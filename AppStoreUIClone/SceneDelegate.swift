@@ -18,10 +18,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = MainTabbarController()
+        window?.rootViewController = createTabbarController(rootVC: MainTabbarController())
         window?.makeKeyAndVisible()
     }
 
+    // Update Tabbar appearance
+    fileprivate func createTabbarController(rootVC : UITabBarController) -> UITabBarController {
+        let appearance = UITabBarAppearance()
+        
+        // If you want you can use this code but if you are use this code, you can see white tabbar
+       // appearance.configureWithOpaqueBackground()
+        
+        // But if you are use this code you can see blurred tabbar, i prefer this
+        appearance.backgroundEffect = UIBlurEffect(style: .systemMaterial)
+        
+        
+        rootVC.tabBar.standardAppearance = appearance
+        rootVC.tabBar.scrollEdgeAppearance = appearance
+        
+        return rootVC
+    }
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

@@ -9,10 +9,18 @@ import UIKit
 
 class AppsViewController: UIViewController {
 
+    // MARK: - Properties
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .green
     }
+}
 
+// MARK: - Helpers
+extension AppsViewController {
+    private func style() {}
+    private func layout() {}
 }

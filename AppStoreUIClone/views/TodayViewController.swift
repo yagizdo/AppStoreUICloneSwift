@@ -8,11 +8,18 @@
 import UIKit
 
 class TodayViewController: UIViewController {
-
+    // MARK: - Properties
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .purple
     }
+}
 
+// MARK: - Helpers
+extension TodayViewController {
+    private func style() {}
+    private func layout() {}
 }
