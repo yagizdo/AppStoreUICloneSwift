@@ -28,6 +28,15 @@ class SearchViewController: UICollectionViewController {
 extension SearchViewController {
     private func style() {
         collectionView.register(SearchedAppCell.self, forCellWithReuseIdentifier: reuseIdentifier )
+        collectionView.backgroundColor = .white
+        view.backgroundColor = .white
+        // Navigation Bar
+                navigationController?.navigationBar.barTintColor = .white 
+        // Searchbar
+        let searchController = UISearchController(searchResultsController: nil)
+        self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.delegate = self
     }
     private func layout() {}
 }
@@ -46,10 +55,17 @@ extension SearchViewController {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension SearchViewController : UICollectionViewDelegateFlowLayout {
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // 250 = view.frame.height * 0.3
         return .init(width: view.frame.width, height: view.frame.height * 0.35)
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
     }
 }
 
