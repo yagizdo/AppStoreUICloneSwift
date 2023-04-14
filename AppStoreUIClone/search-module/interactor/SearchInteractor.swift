@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+class SearchInteractor : PresenterToInteractorSearchProtocol {
+    var searchPresenter: InteractorToPresenterSearchProtocol?
+    
+    func searchApp(searchText: String) {
+        SearchService.shared.fetchSearchData(searchText: searchText) { searchedApps in
+            self.searchPresenter?.sendDataToView(searchedApps: searchedApps)
+        } onFailure: { error in
+            self.searchPresenter?.showError(error: error)
+        }
+
+    }
+}

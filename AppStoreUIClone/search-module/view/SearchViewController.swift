@@ -10,6 +10,8 @@ private let reuseIdentifier = "searchCell"
 class SearchViewController: UICollectionViewController {
 
     // MARK: - Properties
+    var searchPresenterDelegate: ViewToPresenterSearchProtocol?
+    
     // MARK: - Lifecycle
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -21,6 +23,9 @@ class SearchViewController: UICollectionViewController {
         super.viewDidLoad()
         style()
         layout()
+        
+        // Create Search Module
+        SearchRouter.createRef(ref: self)
     }
 }
 
@@ -68,12 +73,22 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // TODO: Add debouncer
-        SearchService.shared.fetchSearchData(searchText: searchText) { isSuccess in
-            print(isSuccess[0].trackName)
-        } onFailure: { error in
-            
+        if !searchText.isEmpty {
+            searchPresenterDelegate?.searchApp(searchText: searchText)
         }
 
+    }
+}
+
+
+// MARK: - PresenterToViewSearchProtocol
+extension SearchViewController : PresenterToViewSearchProtocol {
+    func sendDataToView(searchedApps: [Result]) {
+        print("View data : \(searchedApps[0].trackName)")
+    }
+    
+    func showError(error: Error) {
+        print(error.localizedDescription)
     }
 }
 
