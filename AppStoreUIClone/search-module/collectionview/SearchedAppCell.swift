@@ -9,6 +9,9 @@ import UIKit
 
 class SearchedAppCell: UICollectionViewCell {
     // MARK: - Properties
+    var searchedApp : Result? {
+        didSet { configure() }
+    }
     private var appPhoto: UIImageView = {
         let imageView = UIImageView()
         imageView.customMode()
@@ -61,7 +64,7 @@ class SearchedAppCell: UICollectionViewCell {
         label.text = "Social"
         return label
     }()
-    private var appDownloadCount: UILabel = {
+    private var appRatingCount: UILabel = {
         let label = UILabel()
         label.text = "1.9Mn"
         return label
@@ -101,7 +104,7 @@ class SearchedAppCell: UICollectionViewCell {
 extension SearchedAppCell {
     private func style() {
         labelStackView = UIStackView(arrangedSubviews: [
-            appName,appCategory,appDownloadCount
+            appName,appCategory,appRatingCount
         ])
         labelStackView.axis = .vertical
         labelStackView.distribution = .fillEqually
@@ -138,4 +141,14 @@ extension SearchedAppCell {
             searchedAppStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
+    
+    
+    func configure() {
+        guard let result = self.searchedApp else { return }
+        self.appName.text = result.trackName
+        self.appCategory.text = result.primaryGenreName
+        self.appRatingCount.text = String(format: "%.2f", result.averageUserRatingForCurrentVersion ?? 0)
+        
+    }
 }
+

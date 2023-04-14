@@ -11,6 +11,9 @@ class SearchViewController: UICollectionViewController {
 
     // MARK: - Properties
     var searchPresenterDelegate: ViewToPresenterSearchProtocol?
+    var searchedApps: [Result] = [] {
+        didSet { collectionView.reloadData() }
+    }
     
     // MARK: - Lifecycle
     init() {
@@ -47,12 +50,14 @@ extension SearchViewController {
 // MARK: - UICollectionViewDataSource
 extension SearchViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return searchedApps.count
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? SearchedAppCell else {
             return UICollectionViewCell()
         }
+        
+        cell.searchedApp = searchedApps[indexPath.row]
         return cell
     }
 }
@@ -84,7 +89,7 @@ extension SearchViewController: UISearchBarDelegate {
 // MARK: - PresenterToViewSearchProtocol
 extension SearchViewController : PresenterToViewSearchProtocol {
     func sendDataToView(searchedApps: [Result]) {
-        print("View data : \(searchedApps[0].trackName)")
+        self.searchedApps = searchedApps
     }
     
     func showError(error: Error) {
