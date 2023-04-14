@@ -14,6 +14,9 @@
 		105E629329E8307A004F4794 /* SearchedAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E629229E8307A004F4794 /* SearchedAppCell.swift */; };
 		105E629729E832A8004F4794 /* .swiftlint.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 105E629629E832A8004F4794 /* .swiftlint.yaml */; };
 		105E629B29E84124004F4794 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E629A29E84124004F4794 /* UIExtensions.swift */; };
+		105E629E29E985F1004F4794 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 105E629D29E985F1004F4794 /* Alamofire */; };
+		105E62A129E98D26004F4794 /* ISearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E62A029E98D26004F4794 /* ISearchService.swift */; };
+		105E62A429E98E06004F4794 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E62A329E98E06004F4794 /* SearchService.swift */; };
 		10F0C60029E7740800D62250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C5FF29E7740800D62250 /* AppDelegate.swift */; };
 		10F0C60229E7740800D62250 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C60129E7740800D62250 /* SceneDelegate.swift */; };
 		10F0C60929E7740800D62250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F0C60829E7740800D62250 /* Assets.xcassets */; };
@@ -32,6 +35,8 @@
 		105E629229E8307A004F4794 /* SearchedAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedAppCell.swift; sourceTree = "<group>"; };
 		105E629629E832A8004F4794 /* .swiftlint.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yaml; sourceTree = "<group>"; };
 		105E629A29E84124004F4794 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		105E62A029E98D26004F4794 /* ISearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISearchService.swift; sourceTree = "<group>"; };
+		105E62A329E98E06004F4794 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		10F0C5FC29E7740800D62250 /* AppStoreUIClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreUIClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F0C5FF29E7740800D62250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F0C60129E7740800D62250 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				105E629E29E985F1004F4794 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +130,23 @@
 			path = extensions;
 			sourceTree = "<group>";
 		};
+		105E629F29E98D17004F4794 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				105E62A229E98DF1004F4794 /* searchServices */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		105E62A229E98DF1004F4794 /* searchServices */ = {
+			isa = PBXGroup;
+			children = (
+				105E62A029E98D26004F4794 /* ISearchService.swift */,
+				105E62A329E98E06004F4794 /* SearchService.swift */,
+			);
+			path = searchServices;
+			sourceTree = "<group>";
+		};
 		10F0C5F329E7740800D62250 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +166,7 @@
 		10F0C5FE29E7740800D62250 /* AppStoreUIClone */ = {
 			isa = PBXGroup;
 			children = (
+				105E629F29E98D17004F4794 /* services */,
 				105E629929E84112004F4794 /* extensions */,
 				105E628129E82F8C004F4794 /* search-module */,
 				10F0C61729E7765B00D62250 /* controllers */,
@@ -192,13 +216,15 @@
 				10F0C5F829E7740800D62250 /* Sources */,
 				10F0C5F929E7740800D62250 /* Frameworks */,
 				10F0C5FA29E7740800D62250 /* Resources */,
-				105E628029E8297C004F4794 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = AppStoreUIClone;
+			packageProductDependencies = (
+				105E629D29E985F1004F4794 /* Alamofire */,
+			);
 			productName = AppStoreUIClone;
 			productReference = 10F0C5FC29E7740800D62250 /* AppStoreUIClone.app */;
 			productType = "com.apple.product-type.application";
@@ -227,6 +253,9 @@
 				Base,
 			);
 			mainGroup = 10F0C5F329E7740800D62250;
+			packageReferences = (
+				105E629C29E985F1004F4794 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 10F0C5FD29E7740800D62250 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -249,26 +278,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		105E628029E8297C004F4794 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		10F0C5F829E7740800D62250 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -285,6 +294,8 @@
 				10F0C61529E774DE00D62250 /* MainTabbarController.swift in Sources */,
 				10F0C60029E7740800D62250 /* AppDelegate.swift in Sources */,
 				105E628929E83017004F4794 /* SearchPresenter.swift in Sources */,
+				105E62A429E98E06004F4794 /* SearchService.swift in Sources */,
+				105E62A129E98D26004F4794 /* ISearchService.swift in Sources */,
 				10F0C60229E7740800D62250 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +504,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		105E629C29E985F1004F4794 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		105E629D29E985F1004F4794 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 105E629C29E985F1004F4794 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 10F0C5F429E7740800D62250 /* Project object */;
 }
