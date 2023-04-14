@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ISearchService {
-    func fetchSearchData(searchText term: String)
+    func fetchSearchData(searchText term: String,onSuccess: @escaping ([Result]) -> Void, onFailure: @escaping (Error) -> Void)
 }

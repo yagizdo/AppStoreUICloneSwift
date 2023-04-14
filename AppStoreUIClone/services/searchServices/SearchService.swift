@@ -14,7 +14,7 @@ class SearchService : ISearchService {
     
     private init(){}
     
-    func fetchSearchData(searchText term: String) {
+    func fetchSearchData(searchText term: String, onSuccess: @escaping ([Result]) -> Void, onFailure: @escaping (Error) -> Void) {
         let baseURL = "https://itunes.apple.com/search"
         let params = ["entity":"software","term":term]
             AF.request(baseURL,method: .get,parameters: params).response {
@@ -25,12 +25,13 @@ class SearchService : ISearchService {
                 }
                 
                 if let data = response.data {
-                    print(String(data: data, encoding: .utf8))
+                    let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
+                    onSuccess(searchResult.results)
                 }
-            } catch {
-                
+            } catch let error {
+                print(error.localizedDescription)
+                onFailure(error)
             }
         }
-      
     }
 }

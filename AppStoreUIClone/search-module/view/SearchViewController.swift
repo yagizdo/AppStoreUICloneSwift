@@ -68,7 +68,12 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // TODO: Add debouncer
-        SearchService.shared.fetchSearchData(searchText: searchText)
+        SearchService.shared.fetchSearchData(searchText: searchText) { isSuccess in
+            print(isSuccess[0].trackName)
+        } onFailure: { error in
+            
+        }
+
     }
 }
 
