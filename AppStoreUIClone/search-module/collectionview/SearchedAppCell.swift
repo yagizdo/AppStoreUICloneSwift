@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchedAppCell: UICollectionViewCell {
     // MARK: - Properties
@@ -148,6 +149,28 @@ extension SearchedAppCell {
         self.appName.text = result.trackName
         self.appCategory.text = result.primaryGenreName
         self.appRatingCount.text = String(format: "%.2f", result.averageUserRatingForCurrentVersion ?? 0)
+        if let appIconURL = URL(string: result.artworkUrl100) {
+            DispatchQueue.main.async {
+                self.appPhoto.kf.setImage(with: appIconURL)
+            }
+        }
+        for i in 0..<result.screenshotUrls.count {
+            if let url = URL(string: result.screenshotUrls[i]) {
+                DispatchQueue.main.async {
+                    switch i {
+                    case 0:
+                        self.screenshotView1.kf.setImage(with: url)
+                    case 1:
+                        self.screenshotView2.kf.setImage(with: url)
+                    case 2:
+                        self.screenshotView3.kf.setImage(with: url)
+ 
+                    default: print("")
+                    }
+                    
+                }
+            }
+        }
         
     }
 }
