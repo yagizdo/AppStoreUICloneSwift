@@ -14,6 +14,7 @@ class SearchViewController: UICollectionViewController {
     var searchedApps: [Result] = [] {
         didSet { collectionView.reloadData() }
     }
+    var circularProgress: UIActivityIndicatorView!
     
     // MARK: - Lifecycle
     init() {
@@ -46,6 +47,19 @@ extension SearchViewController {
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.delegate = self
+        
+        // Progress View
+        self.circularProgress = UIActivityIndicatorView(frame: view.frame)
+        view.addSubview(circularProgress)
+        self.circularProgress.startAnimating()
+        self.circularProgress.hidesWhenStopped = true
+        self.circularProgress.translatesAutoresizingMaskIntoConstraints = false
+        self.circularProgress.transform = CGAffineTransform(scaleX: 2, y: 2)
+        NSLayoutConstraint.activate([
+            self.circularProgress.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            self.circularProgress.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+        
     }
     private func layout() {}
 }
@@ -93,6 +107,7 @@ extension SearchViewController: UISearchBarDelegate {
 extension SearchViewController : PresenterToViewSearchProtocol {
     func sendDataToView(searchedApps: [Result]) {
         self.searchedApps = searchedApps
+        circularProgress.stopAnimating()
     }
     
     func showError(error: Error) {
