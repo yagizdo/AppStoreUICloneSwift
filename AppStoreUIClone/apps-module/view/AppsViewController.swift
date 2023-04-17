@@ -33,7 +33,7 @@ class AppsViewController: UICollectionViewController {
 // MARK: - Helpers
 extension AppsViewController {
     private func style() {
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(AppCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     private func layout() {}
 }
@@ -45,8 +45,7 @@ extension AppsViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let appCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        appCell.backgroundColor = .red
+        let appCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AppCell
         return appCell
     }
 }
