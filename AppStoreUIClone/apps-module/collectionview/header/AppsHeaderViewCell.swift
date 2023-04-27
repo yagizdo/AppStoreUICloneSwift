@@ -1,5 +1,5 @@
 //
-//  AppsHeaderView.swift
+//  AppsHeaderViewCell.swift
 //  AppStoreUIClone
 //
 //  Created by Yılmaz Yağız Dokumacı on 27.04.2023.
@@ -7,11 +7,13 @@
 
 import UIKit
 
-class AppsHeaderView: UICollectionReusableView {
-        // MARK: - Properties
-        // MARK: - Lifecycle
+class AppsHeaderViewCell: UICollectionViewCell {
+    // MARK: - Properties
+    // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        style()
+        layout()
     }
     
     required init?(coder: NSCoder) {
@@ -20,3 +22,9 @@ class AppsHeaderView: UICollectionReusableView {
 }
 
 // MARK: - Helpers
+extension AppsHeaderViewCell {
+    private func style() {
+        backgroundColor = .red
+    }
+    private func layout() {}
+}

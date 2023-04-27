@@ -27,6 +27,8 @@
 		106F4EA729F93CD80027A1A8 /* AppCellDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F4EA629F93CD80027A1A8 /* AppCellDetailController.swift */; };
 		106F4EA929F9435A0027A1A8 /* AppCellDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F4EA829F9435A0027A1A8 /* AppCellDetailCell.swift */; };
 		106F4EAB29FA86A30027A1A8 /* AppsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F4EAA29FA86A30027A1A8 /* AppsHeaderView.swift */; };
+		106F4EAE29FA9A3D0027A1A8 /* AppsHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F4EAD29FA9A3D0027A1A8 /* AppsHeaderViewController.swift */; };
+		106F4EB029FA9B6F0027A1A8 /* AppsHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F4EAF29FA9B6F0027A1A8 /* AppsHeaderViewCell.swift */; };
 		10F0C60029E7740800D62250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C5FF29E7740800D62250 /* AppDelegate.swift */; };
 		10F0C60229E7740800D62250 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C60129E7740800D62250 /* SceneDelegate.swift */; };
 		10F0C60929E7740800D62250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F0C60829E7740800D62250 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		106F4EA629F93CD80027A1A8 /* AppCellDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCellDetailController.swift; sourceTree = "<group>"; };
 		106F4EA829F9435A0027A1A8 /* AppCellDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCellDetailCell.swift; sourceTree = "<group>"; };
 		106F4EAA29FA86A30027A1A8 /* AppsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderView.swift; sourceTree = "<group>"; };
+		106F4EAD29FA9A3D0027A1A8 /* AppsHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderViewController.swift; sourceTree = "<group>"; };
+		106F4EAF29FA9B6F0027A1A8 /* AppsHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderViewCell.swift; sourceTree = "<group>"; };
 		10F0C5FC29E7740800D62250 /* AppStoreUIClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreUIClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F0C5FF29E7740800D62250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F0C60129E7740800D62250 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,10 +205,10 @@
 		105E62AD29ED8D03004F4794 /* collectionview */ = {
 			isa = PBXGroup;
 			children = (
+				106F4EAC29FA9A160027A1A8 /* header */,
 				105E62BB29ED95D5004F4794 /* AppCell.swift */,
 				106F4EA629F93CD80027A1A8 /* AppCellDetailController.swift */,
 				106F4EA829F9435A0027A1A8 /* AppCellDetailCell.swift */,
-				106F4EAA29FA86A30027A1A8 /* AppsHeaderView.swift */,
 			);
 			path = collectionview;
 			sourceTree = "<group>";
@@ -246,6 +250,16 @@
 			children = (
 			);
 			path = entity;
+			sourceTree = "<group>";
+		};
+		106F4EAC29FA9A160027A1A8 /* header */ = {
+			isa = PBXGroup;
+			children = (
+				106F4EAA29FA86A30027A1A8 /* AppsHeaderView.swift */,
+				106F4EAD29FA9A3D0027A1A8 /* AppsHeaderViewController.swift */,
+				106F4EAF29FA9B6F0027A1A8 /* AppsHeaderViewCell.swift */,
+			);
+			path = header;
 			sourceTree = "<group>";
 		};
 		10F0C5F329E7740800D62250 = {
@@ -395,6 +409,7 @@
 				105E62BC29ED95D5004F4794 /* AppCell.swift in Sources */,
 				106F4EA929F9435A0027A1A8 /* AppCellDetailCell.swift in Sources */,
 				105E629B29E84124004F4794 /* UIExtensions.swift in Sources */,
+				106F4EB029FA9B6F0027A1A8 /* AppsHeaderViewCell.swift in Sources */,
 				10F0C61B29E776FD00D62250 /* AppsViewController.swift in Sources */,
 				105E629329E8307A004F4794 /* SearchedAppCell.swift in Sources */,
 				105E628B29E83028004F4794 /* SearchInteractor.swift in Sources */,
@@ -407,6 +422,7 @@
 				105E628929E83017004F4794 /* SearchPresenter.swift in Sources */,
 				105E62A429E98E06004F4794 /* SearchService.swift in Sources */,
 				105E62A129E98D26004F4794 /* ISearchService.swift in Sources */,
+				106F4EAE29FA9A3D0027A1A8 /* AppsHeaderViewController.swift in Sources */,
 				105E62B929ED8D6F004F4794 /* AppsProtocols.swift in Sources */,
 				10F0C60229E7740800D62250 /* SceneDelegate.swift in Sources */,
 			);
