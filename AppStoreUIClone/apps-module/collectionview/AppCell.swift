@@ -16,6 +16,8 @@ class AppCell: UICollectionViewCell {
         return label
     }()
     
+    private let appCellDetailController = AppCellDetailController()
+    
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,14 +35,26 @@ extension AppCell {
     private func style() {
         backgroundColor = .yellow
         sectionName.translatesAutoresizingMaskIntoConstraints = false
+        appCellDetailController.view.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func layout() {
+        
+        // Title and Collection View Section
         addSubview(sectionName)
+        addSubview(appCellDetailController.view)
         NSLayoutConstraint.activate([
+            
+            // Title
             sectionName.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             sectionName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            sectionName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 16)
+            sectionName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 16),
+            
+            // Collection View
+            appCellDetailController.view.topAnchor.constraint(equalTo: sectionName.bottomAnchor),
+            appCellDetailController.view.leadingAnchor.constraint(equalTo: leadingAnchor),
+            appCellDetailController.view.trailingAnchor.constraint(equalTo: trailingAnchor),
+            appCellDetailController.view.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 }
