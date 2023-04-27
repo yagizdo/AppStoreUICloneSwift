@@ -30,6 +30,7 @@ class AppsHeaderViewController: UICollectionViewController {
 extension AppsHeaderViewController {
     private func style() {
         collectionView.register(AppsHeaderViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.isPagingEnabled = true
     }
     private func layout() {}
 }
