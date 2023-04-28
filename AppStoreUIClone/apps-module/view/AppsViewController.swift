@@ -24,7 +24,7 @@ class AppsViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         view.backgroundColor = .green
         style()
         layout()

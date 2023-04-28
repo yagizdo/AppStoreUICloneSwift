@@ -29,6 +29,8 @@
 		106F4EAB29FA86A30027A1A8 /* AppsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F4EAA29FA86A30027A1A8 /* AppsHeaderView.swift */; };
 		106F4EAE29FA9A3D0027A1A8 /* AppsHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F4EAD29FA9A3D0027A1A8 /* AppsHeaderViewController.swift */; };
 		106F4EB029FA9B6F0027A1A8 /* AppsHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F4EAF29FA9B6F0027A1A8 /* AppsHeaderViewCell.swift */; };
+		106F4EB329FC018B0027A1A8 /* IAppsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F4EB229FC018B0027A1A8 /* IAppsService.swift */; };
+		106F4EB529FC01C30027A1A8 /* AppsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F4EB429FC01C30027A1A8 /* AppsService.swift */; };
 		10F0C60029E7740800D62250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C5FF29E7740800D62250 /* AppDelegate.swift */; };
 		10F0C60229E7740800D62250 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F0C60129E7740800D62250 /* SceneDelegate.swift */; };
 		10F0C60929E7740800D62250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F0C60829E7740800D62250 /* Assets.xcassets */; };
@@ -60,6 +62,8 @@
 		106F4EAA29FA86A30027A1A8 /* AppsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderView.swift; sourceTree = "<group>"; };
 		106F4EAD29FA9A3D0027A1A8 /* AppsHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderViewController.swift; sourceTree = "<group>"; };
 		106F4EAF29FA9B6F0027A1A8 /* AppsHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderViewCell.swift; sourceTree = "<group>"; };
+		106F4EB229FC018B0027A1A8 /* IAppsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAppsService.swift; sourceTree = "<group>"; };
+		106F4EB429FC01C30027A1A8 /* AppsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsService.swift; sourceTree = "<group>"; };
 		10F0C5FC29E7740800D62250 /* AppStoreUIClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreUIClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F0C5FF29E7740800D62250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F0C60129E7740800D62250 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 		105E629F29E98D17004F4794 /* services */ = {
 			isa = PBXGroup;
 			children = (
+				106F4EB129FC01710027A1A8 /* appsServices */,
 				105E62A229E98DF1004F4794 /* searchServices */,
 			);
 			path = services;
@@ -260,6 +265,15 @@
 				106F4EAF29FA9B6F0027A1A8 /* AppsHeaderViewCell.swift */,
 			);
 			path = header;
+			sourceTree = "<group>";
+		};
+		106F4EB129FC01710027A1A8 /* appsServices */ = {
+			isa = PBXGroup;
+			children = (
+				106F4EB229FC018B0027A1A8 /* IAppsService.swift */,
+				106F4EB429FC01C30027A1A8 /* AppsService.swift */,
+			);
+			path = appsServices;
 			sourceTree = "<group>";
 		};
 		10F0C5F329E7740800D62250 = {
@@ -415,9 +429,11 @@
 				105E628B29E83028004F4794 /* SearchInteractor.swift in Sources */,
 				105E62A729E99BDB004F4794 /* SearchResult.swift in Sources */,
 				105E62B629ED8D57004F4794 /* AppsInteractor.swift in Sources */,
+				106F4EB329FC018B0027A1A8 /* IAppsService.swift in Sources */,
 				106F4EA729F93CD80027A1A8 /* AppCellDetailController.swift in Sources */,
 				105E628629E82FF3004F4794 /* SearchRouter.swift in Sources */,
 				10F0C61529E774DE00D62250 /* MainTabbarController.swift in Sources */,
+				106F4EB529FC01C30027A1A8 /* AppsService.swift in Sources */,
 				10F0C60029E7740800D62250 /* AppDelegate.swift in Sources */,
 				105E628929E83017004F4794 /* SearchPresenter.swift in Sources */,
 				105E62A429E98E06004F4794 /* SearchService.swift in Sources */,
