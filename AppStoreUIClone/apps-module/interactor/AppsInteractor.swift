@@ -7,6 +7,16 @@
 
 import Foundation
 
-class AppsInteractor {
+class AppsInteractor : PresenterToInteractorAppsProtocol {
+    var appsPresenter: InteractorToPresenterAppsProtocol?
     
+    func fetchApps() {
+        print("Interactor metod calisti")
+        AppsService.shared.fetchAppsDetailData { feed in
+            self.appsPresenter?.sendDataToView(fetchedApps: feed)
+        } onFailure: { error in
+            self.appsPresenter?.showError(error: error)
+        }
+
+    }
 }

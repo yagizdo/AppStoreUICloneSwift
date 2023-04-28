@@ -7,6 +7,18 @@
 
 import Foundation
 
-class AppsRouter {
-    
+class AppsRouter: PresenterToRouterAppsProtocol {
+    static func createModule(ref: AppsViewController) {
+        let appsPresenter = AppsPresenter()
+        
+        // View
+        ref.appsPresenterDelegate = appsPresenter
+        
+        // Presenter
+        ref.appsPresenterDelegate?.appsView = ref
+        ref.appsPresenterDelegate?.appsInteractor = AppsInteractor()
+        
+        // Interactor
+        ref.appsPresenterDelegate?.appsInteractor?.appsPresenter = appsPresenter
+    }
 }

@@ -12,7 +12,10 @@ private let reuseHeaderIdentifier = "appsHeader"
 class AppsViewController: UICollectionViewController {
 
     // MARK: - Properties
-    
+    var appsPresenterDelegate: ViewToPresenterAppsProtocol?
+    var feeds: [Feed] = []{
+        didSet{collectionView.reloadData()}
+    }
     // MARK: - Lifecycle
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -25,7 +28,13 @@ class AppsViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        view.backgroundColor = .green
+        // Create module
+        AppsRouter.createModule(ref: self)
+        
+        // Fetch Apps
+        appsPresenterDelegate?.fetchApps()
+        
+        // Helpers
         style()
         layout()
     }
@@ -64,5 +73,17 @@ extension AppsViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return .init(width: view.frame.width, height: 250)
+    }
+}
+
+// MARK: - Get Apps Data
+extension AppsViewController: PresenterToViewAppsProtocol {
+    func sendDataToView(fetchedApps: Feed) {
+        print("Viper ile data alma metodu calisti")
+        self.feeds.append(fetchedApps)
+    }
+    
+    func showError(error: Error) {
+        print("Custom Error:\(error.localizedDescription)")
     }
 }
