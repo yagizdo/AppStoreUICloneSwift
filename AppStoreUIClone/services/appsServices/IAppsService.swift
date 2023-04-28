@@ -8,5 +8,5 @@
 import Foundation
 
 protocol IAppsService {
-    func fetchAppsDetailData(onSuccess: @escaping ([Result]) -> Void, onFailure: @escaping (Error) -> Void)
+    func fetchAppsDetailData(onSuccess: @escaping (Feed) -> Void, onFailure: @escaping (Error) -> Void)
 }

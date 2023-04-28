@@ -14,7 +14,7 @@ class AppsService : IAppsService {
     
     private init(){}
     
-    func fetchAppsDetailData(onSuccess: @escaping ([Result]) -> Void, onFailure: @escaping (Error) -> Void) {
+    func fetchAppsDetailData(onSuccess: @escaping (Feed) -> Void, onFailure: @escaping (Error) -> Void) {
 
         guard let baseURL = URL(string: "https://rss.applemarketingtools.com/api/v2/tr/apps/top-free/25/apps.json") else {return}
             AF.request(baseURL,method: .get).response {
@@ -25,8 +25,8 @@ class AppsService : IAppsService {
                 }
                 
                 if let data = response.data {
-                    //let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
-                    //onSuccess(searchResult.results)
+                    let appsDetailResult = try JSONDecoder().decode(AppModel.self, from: data)
+                    onSuccess(appsDetailResult.feed)
                     print(String(data: data, encoding: .utf8))
                 }
             } catch let error {
